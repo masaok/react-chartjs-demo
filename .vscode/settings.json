@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "git.autorefresh": false,
+    "vim.statusBarColorControl": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.sortOrder": "default"
+}
