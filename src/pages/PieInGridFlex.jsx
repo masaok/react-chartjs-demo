@@ -1,19 +1,44 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import { Pie } from 'react-chartjs-2'
-
 import { makeStyles } from '@material-ui/core/styles'
+
+import clsx from 'clsx'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
 
 const useStyles = makeStyles(
   theme => ({
     root: {
-      display: 'flex',
+      display: 'grid',
+      minHeight: '100vh',
+      minWidth: '100vw', // fill viewport width
+
+      gridTemplate: `
+        "content" auto
+        / auto
+      `,
+
+      backgroundColor: 'white',
+    },
+
+    // Grid Panels
+    gridPanel: {},
+
+    contentGridPanel: {
+      gridArea: 'content',
+      display: 'flex', // grid exterior, flex interior
       flex: 1,
-      // minWidth: 0,
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      minHeight: '100%',
+      minWidth: '100%',
+      // padding: theme.spacing(3), // padding will show container background color
+      background: theme.palette.primary.gradient,
     },
   }),
-  { name: 'PieSimple' }
+  { name: 'PieInGridFlex' }
 )
 
 export const data = {
@@ -43,13 +68,15 @@ export const data = {
   ],
 }
 
-const PieSimple = props => {
+const PieInGridFlex = props => {
   const classes = useStyles(props)
   return (
     <div className={classes.root}>
-      <Pie data={data} />
+      <div className={clsx(classes.gridPanel, classes.contentGridPanel)}>
+        <Pie data={data} />
+      </div>
     </div>
   )
 }
 
-export default PieSimple
+export default PieInGridFlex
