@@ -17,6 +17,7 @@ const useStyles = makeStyles(
       // overflowY: 'scroll',
 
       gridTemplate: `
+        "header" auto  /* height set by content */
         "content" 1fr
         / auto
       `,
@@ -27,6 +28,14 @@ const useStyles = makeStyles(
     // Grid Panels
     gridPanel: {
       // padding: theme.spacing(2),
+    },
+
+    headerGridPanel: {
+      gridArea: 'header',
+      display: 'flex',
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 
     contentGridPanel: {
@@ -47,6 +56,9 @@ const AgencyContainer = props => {
 
   return (
     <div className={classes.root}>
+      <div className={clsx(classes.gridPanel, classes.headerGridPanel)}>
+        AGENCY CONTAINER HEADER
+      </div>
       <div className={clsx(classes.gridPanel, classes.contentGridPanel)}>
         <Outlet />
       </div>

@@ -10,6 +10,7 @@ import AgencyDashboard from 'pages/AgencyDashboard'
 import Fiddle from 'pages/Fiddle'
 import FiddleJSS from 'pages/FiddleJSS'
 import FiddleReact from 'pages/FiddleReact'
+import GridAutoFitMinMax from 'grid/GridAutoFitMinMax'
 
 const useStyles = makeStyles(
   theme => ({
@@ -38,6 +39,9 @@ const App = props => {
           <Route path="/fiddle" element={<Fiddle />} />
           <Route path="/fiddle-jss" element={<FiddleJSS />} />
           <Route path="/fiddle-react" element={<FiddleReact />} />
+
+          {/* CSS Grid Examples */}
+          <Route path="/autofit" element={<GridAutoFitMinMax />} />
 
           {/* Full Example - does not shrink  */}
           <Route path="/desktop" element={<DesktopGridContainer />}>
