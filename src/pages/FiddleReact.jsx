@@ -5,7 +5,6 @@
  * This is a demo of the working JSFiddle, but in React component form.
  * Also, using the React library wrapper
  */
-import { useEffect } from 'react'
 import { Chart, registerables } from 'chart.js'
 
 import { Line } from 'react-chartjs-2'
@@ -48,26 +47,26 @@ const useStyles = makeStyles(
   { name: 'FiddleReact' }
 )
 
+const data = {
+  labels: [0, 1, 2, 3, 4],
+  datasets: [
+    {
+      backgroundColor: 'rgba(0,0,0,0)',
+      borderColor: '#5ac3d0',
+      label: 'MILESTONE',
+      data: [50, 53, 56, 59, 62],
+    },
+    {
+      backgroundColor: 'rgba(255, 99, 132, 0.2)',
+      borderColor: 'rgba(255,99,132,1)',
+      label: 'UPDATES',
+      data: [51, 52, 53, 54, 55],
+    },
+  ],
+}
+
 const FiddleReact = props => {
   const classes = useStyles(props)
-
-  const data = {
-    labels: [0, 1, 2, 3, 4],
-    datasets: [
-      {
-        backgroundColor: 'rgba(0,0,0,0)',
-        borderColor: '#5ac3d0',
-        label: 'MILESTONE',
-        data: [50, 53, 56, 59, 62],
-      },
-      {
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255,99,132,1)',
-        label: 'UPDATES',
-        data: [51, 52, 53, 54, 55],
-      },
-    ],
-  }
 
   return (
     <div className={classes.grid}>

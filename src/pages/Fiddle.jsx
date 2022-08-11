@@ -27,6 +27,7 @@ const useStyles = makeStyles(
 
 const Fiddle = props => {
   const classes = useStyles(props)
+  console.log(classes)
 
   useEffect(() => {
     for (var i = 0; i < 4; ++i) {
