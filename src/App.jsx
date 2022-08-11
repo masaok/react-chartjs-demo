@@ -7,6 +7,7 @@ import PieInGridFlex from 'pages/PieInGridFlex'
 import DesktopGridContainer from 'containers/DesktopGridContainer'
 import AgencyContainer from 'containers/AgencyContainer'
 import AgencyDashboard from 'pages/AgencyDashboard'
+import Fiddle from 'pages/Fiddle'
 
 const useStyles = makeStyles(
   theme => ({
@@ -16,7 +17,7 @@ const useStyles = makeStyles(
       flex: 1,
       minHeight: '100vh',
       minWidth: '100vw',
-      backgroundColor: 'blue', // this works
+      backgroundColor: '#EEE', // this works
     },
   }),
   { name: 'App' }
@@ -32,6 +33,7 @@ const App = props => {
           <Route path="/pie-simple" element={<PieSimple />} />
           <Route path="/pie-grid" element={<PieInGrid />} />
           <Route path="/pie-grid-flex" element={<PieInGridFlex />} />
+          <Route path="/fiddle" element={<Fiddle />} />
 
           {/* Full Example (not working) */}
           <Route path="/desktop" element={<DesktopGridContainer />}>
