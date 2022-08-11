@@ -8,6 +8,8 @@ import DesktopGridContainer from 'containers/DesktopGridContainer'
 import AgencyContainer from 'containers/AgencyContainer'
 import AgencyDashboard from 'pages/AgencyDashboard'
 import Fiddle from 'pages/Fiddle'
+import FiddleJSS from 'pages/FiddleJSS'
+import FiddleReact from 'pages/FiddleReact'
 
 const useStyles = makeStyles(
   theme => ({
@@ -34,13 +36,17 @@ const App = props => {
           <Route path="/pie-grid" element={<PieInGrid />} />
           <Route path="/pie-grid-flex" element={<PieInGridFlex />} />
           <Route path="/fiddle" element={<Fiddle />} />
+          <Route path="/fiddle-jss" element={<FiddleJSS />} />
+          <Route path="/fiddle-react" element={<FiddleReact />} />
 
           {/* Full Example - does not shrink  */}
           <Route path="/desktop" element={<DesktopGridContainer />}>
-            <Route path="fiddle" element={<Fiddle />} />
+            <Route path="fiddle-jss" element={<FiddleJSS />} />
+            <Route path="fiddle-react" element={<FiddleReact />} />
             <Route path="agency">
               <Route element={<AgencyContainer />}>
                 <Route path="dashboard" element={<AgencyDashboard />} />
+                <Route path="fiddle-react" element={<FiddleReact />} />
               </Route>
             </Route>
           </Route>
