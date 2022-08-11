@@ -7,8 +7,8 @@ const useStyles = makeStyles(
   theme => ({
     root: {
       display: 'grid',
-      // minHeight: '100%',
-      // minWidth: '100%',
+      minHeight: '100%',
+      minWidth: '100%',
       // https://stackoverflow.com/questions/45870323/does-css-grid-have-a-flex-grow-function
       gridTemplate: `
         "header" auto  /* height set by content */

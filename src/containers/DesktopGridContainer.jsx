@@ -51,6 +51,7 @@ const DesktopGridContainer = props => {
   return (
     <div className={classes.root}>
       <div className={clsx(classes.gridPanel, classes.contentGridPanel)}>
+        DESKTOP GRID CONTAINER
         <Outlet />
       </div>
     </div>

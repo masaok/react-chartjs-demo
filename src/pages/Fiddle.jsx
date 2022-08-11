@@ -1,3 +1,9 @@
+/**
+ * This Github issue explains the problem:
+ * https://github.com/chartjs/Chart.js/issues/4156#issuecomment-295180128
+ *
+ * This is a demo of the working JSFiddle, but in React component form.
+ */
 import { useEffect } from 'react'
 import { Chart, registerables } from 'chart.js'
 
@@ -5,6 +11,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import './fiddle.css'
 
+// "registerables" shorthand: https://stackoverflow.com/a/70593795
 Chart.register(...registerables)
 
 const useStyles = makeStyles(

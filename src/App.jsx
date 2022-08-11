@@ -35,8 +35,9 @@ const App = props => {
           <Route path="/pie-grid-flex" element={<PieInGridFlex />} />
           <Route path="/fiddle" element={<Fiddle />} />
 
-          {/* Full Example (not working) */}
+          {/* Full Example - does not shrink  */}
           <Route path="/desktop" element={<DesktopGridContainer />}>
+            <Route path="fiddle" element={<Fiddle />} />
             <Route path="agency">
               <Route element={<AgencyContainer />}>
                 <Route path="dashboard" element={<AgencyDashboard />} />
@@ -44,12 +45,12 @@ const App = props => {
             </Route>
           </Route>
 
-          {/* No Agency Container */}
+          {/* No Agency Container - does not shrink */}
           <Route path="/desktop" element={<DesktopGridContainer />}>
             <Route path="dashboard" element={<AgencyDashboard />} />
           </Route>
 
-          {/* Dashboard Only */}
+          {/* Dashboard Only - does not shrink */}
           <Route path="/dashboard" element={<AgencyDashboard />} />
         </Routes>
       </Router>
